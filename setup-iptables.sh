@@ -14,13 +14,69 @@ sudo iptables -A OUTPUT -p icmp -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 7031 -m state --state NEW,ESTABLISHED -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 7031 -m state --state NEW,ESTABLISHED -j ACCEPT
 
+# Izinkan koneksi UDP pada port 7031 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 7031 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 7031 -m state --state NEW,ESTABLISHED -j ACCEPT
+
 # Izinkan koneksi HTTP (port 80) (masuk dan keluar)
 sudo iptables -A INPUT -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
 
+# Izinkan koneksi UDP pada port 80 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
+
 # Izinkan koneksi HTTPS (port 443) (masuk dan keluar)
 sudo iptables -A INPUT -p tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 443 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi SSH (port 22) (masuk dan keluar)
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 22 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi MySQL (port 3306) (masuk dan keluar)
+sudo iptables -A INPUT -p tcp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 3306 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 3306 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi RPC (port 111) (masuk dan keluar)
+sudo iptables -A INPUT -p tcp --dport 111 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 111 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 111 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 111 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 111 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi CUPS (port 631) (masuk dan keluar)
+sudo iptables -A INPUT -p tcp --dport 631 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 631 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 631 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 631 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 631 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi DHCP (port 68) (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 68 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 68 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 615 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 615 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 615 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+# Izinkan koneksi UDP pada port 618 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --dport 618 -m state --state NEW,ESTABLISHED -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 618 -m state --state NEW,ESTABLISHED -j ACCEPT
 
 # Izinkan koneksi yang sudah ada (ESTABLISHED, RELATED) pada semua port
 sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
