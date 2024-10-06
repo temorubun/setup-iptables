@@ -78,6 +78,10 @@ sudo iptables -A OUTPUT -p udp --dport 615 -m state --state NEW,ESTABLISHED -j A
 sudo iptables -A INPUT -p udp --dport 618 -m state --state NEW,ESTABLISHED -j ACCEPT
 sudo iptables -A OUTPUT -p udp --dport 618 -m state --state NEW,ESTABLISHED -j ACCEPT
 
+# Izinkan koneksi UDP pada port 32768 dan 33410 (masuk dan keluar)
+sudo iptables -A INPUT -p udp --sport 32768 -j ACCEPT
+sudo iptables -A OUTPUT -p udp --dport 33410 -j ACCEPT
+
 # Izinkan koneksi yang sudah ada (ESTABLISHED, RELATED) pada semua port
 sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
