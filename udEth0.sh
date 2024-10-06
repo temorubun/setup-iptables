@@ -1,7 +1,7 @@
 !/bin/bash
 
 # Cek status interface eth1
-STATUS=$(ip link show eth1 | grep "state UP")
+STATUS=$(ip link show eth0 | grep "state UP")
 
 if [ -n "$STATUS" ]; then
     echo "refresh.."
