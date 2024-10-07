@@ -18,6 +18,8 @@ ONBOOT=yes
 IPADDR=192.168.3.251
 NETMASK=255.255.255.0
 GATEWAY=192.168.3.1
+DNS1=8.8.8.8
+DNS2=8.8.4.4
 EOL
 
 # Tampilkan isi file konfigurasi
